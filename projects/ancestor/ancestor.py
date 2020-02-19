@@ -27,26 +27,16 @@ def earliest_ancestor(ancestors, starting_node):
             else:
                 paths.append(path)
 
-    print(paths)
-    if len(paths) == 0:
-        return -1
-
-
-    elif len(paths) == 1:
-        oldest = paths[0][-1]
-        return oldest
-
-    elif len(paths) >= 2:
-        depth = 0
-        oldest = None
-        for path in paths:
-            if len(path) > depth:
-                depth = len(path)
+    
+    depth = 0
+    oldest = -1
+    for path in paths:
+        if len(path) > depth:
+            depth = len(path)
+            oldest = path[-1]
+        elif len(path) == depth:
+            if oldest > path[-1]:
                 oldest = path[-1]
-            elif len(path) == depth:
-                if oldest > path[-1]:
-                    oldest = path[-1]
         
-        return oldest
+    return oldest
         
-
