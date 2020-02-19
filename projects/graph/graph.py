@@ -170,7 +170,7 @@ class Graph:
             visited.add(starting_vertex)
 
             if starting_vertex == destination_vertex:
-                return [starting_vertex]
+                return [ starting_vertex ]
 
             for neighbor in self.get_neighbors(starting_vertex):
                 path = self.dfs_recursive(neighbor, destination_vertex, visited)
@@ -221,15 +221,15 @@ if __name__ == '__main__':
         1, 2, 4, 3, 7, 6, 5
         1, 2, 4, 3, 7, 5, 6
     '''
-    # graph.bft(1)
+    graph.bft(1)
 
-    # '''
-    # Valid DFT paths:
-    #     1, 2, 3, 5, 4, 6, 7
-    #     1, 2, 3, 5, 4, 7, 6
-    #     1, 2, 4, 7, 6, 3, 5
-    #     1, 2, 4, 6, 3, 5, 7
-    # '''
+    '''
+    Valid DFT paths:
+        1, 2, 3, 5, 4, 6, 7
+        1, 2, 3, 5, 4, 7, 6
+        1, 2, 4, 7, 6, 3, 5
+        1, 2, 4, 6, 3, 5, 7
+    '''
     graph.dft(1)
     graph.dft_recursive(1)
 
